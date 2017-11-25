@@ -9,7 +9,7 @@ from django.utils import timezone
 class Post(models.Model):
     title = models.CharField(max_length=200)
     slug = models.CharField(max_length=200)
-    abstract = models.TextField(default="输入文章摘要", max_length=40)
+    abstract = models.TextField(null=True, max_length=40)
     body = models.TextField()
     pub_date = models.DateTimeField(default=timezone.now)
 

@@ -3,12 +3,16 @@
 {% block title %}
     {{ post.title }}
 {% endblock %}
-{% block message %}
-    <h3> {{ post.title }}</h3>
-    <a href="/">返回首页</a>
-{% endblock %}
-{% block content %}
-    <p>
-        {{ post.body | markdown }}
-    </p>
+{% block blog_post %}
+  <div class="blog-post">
+  <h2 class="blog-post-title">{{ post.title }}</h2>
+  <p class="blog-post-meta">
+    发布时间：{{ post.pub_date | date:"Y M d, h:m:s" }}
+    <a href="#">hqwhqwhq</a>
+  </p>
+  <hr>
+  <p>
+    {{ post.body | markdown:'codehilite' }}
+  </p>
+  </div><!-- /.blog-post -->
 {% endblock %}
